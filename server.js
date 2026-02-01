@@ -2,9 +2,15 @@ const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const helmet = require('helmet');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Security middleware
 app.use(helmet({
@@ -24,6 +30,10 @@ app.use(compression());
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// API routes
+const processBillRoute = require('./routes/process-bill');
+app.use('/api', processBillRoute);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
