@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Bot - Your Medical Bill Advocate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="#007AFF" stroke-width="2"/>
+                        <path d="M12 16L15 19L20 14" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Bill Bot</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#how-it-works">How it Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#about">About</a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Your medical bill <span class="gradient-text">negotiator</span></h1>
+            <p class="hero-subtitle">Too exhausted to fight back? We handle the calls, the paperwork, and the pushback. You pay 20% of what we save. Nothing upfront.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">22¢</div>
+                    <div class="stat-label">What insurers pay per dollar</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Average bill reduction</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$0</div>
+                    <div class="stat-label">Upfront cost</div>
+                </div>
+            </div>
+            
+            <button class="cta-button" onclick="scrollToUpload()">
+                Start Your Claim
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <div class="upload-container">
+                <h2>Upload Your Medical Bill</h2>
+                <p class="upload-subtitle">PDF, photo, or screenshot - we'll extract the details</p>
+                
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.heic" multiple hidden>
+                    
+                    <div class="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="upload-icon">
+                            <rect x="8" y="8" width="32" height="32" rx="8" stroke="#007AFF" stroke-width="2" stroke-dasharray="4 4"/>
+                            <path d="M24 18V30M24 18L20 22M24 18L28 22" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        <h3>Drop your bill here</h3>
+                        <p>or <button class="link-button" onclick="document.getElementById('fileInput').click()">browse files</button></p>
+                        <p class="upload-hint">Supports PDF, JPG, PNG, HEIC up to 10MB</p>
+                    </div>
+                    
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="progress-text">Analyzing your bill...</p>
+                    </div>
+                </div>
+                
+                <div class="security-note">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2L3 4V7.5C3 10.5 5.5 13 8 14C10.5 13 13 10.5 13 7.5V4L8 2Z" stroke="#34C759" stroke-width="1.5"/>
+                    </svg>
+                    <span>Your data is encrypted and HIPAA compliant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-section">
+        <div class="container">
+            <h2 class="section-title">How Bill Bot Works</h2>
+            <p class="section-subtitle">We fight like insurance companies do</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Your Bill</h3>
+                    <p>Our OCR technology extracts every charge, code, and fee from your medical bill.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>We compare your charges against CMS benchmarks and flag the negotiable overcharges.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Expert Negotiation</h3>
+                    <p>Former hospital billing specialists handle the calls using proven scripts and leverage.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>You Save Money</h3>
+                    <p>Pay only 20% of what we save. $4,000 reduction = $800 fee. Nothing saved = no fee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Overcharges -->
+    <section class="overcharges-section">
+        <div class="container">
+            <h2 class="section-title">Charges We Target</h2>
+            <p class="section-subtitle">These inflated costs are designed for negotiation</p>
+            
+            <div class="charge-grid">
+                <div class="charge-card">
+                    <div class="charge-header">
+                        <span class="charge-name">Facility Fee</span>
+                        <span class="charge-amount">$847</span>
+                    </div>
+                    <p>A vague charge for "using the space" - often completely negotiable</p>
+                </div>
+                
+                <div class="charge-card">
+                    <div class="charge-header">
+                        <span class="charge-name">Bandage</span>
+                        <span class="charge-amount">$200</span>
+                    </div>
+                    <p>Wholesale cost: $2. Markup: 10,000%. We know the real prices.</p>
+                </div>
+                
+                <div class="charge-card">
+                    <div class="charge-header">
+                        <span class="charge-name">Ibuprofen (single pill)</span>
+                        <span class="charge-amount">$43</span>
+                    </div>
+                    <p>Same pill costs 4¢ at the pharmacy. This is pure profit padding.</p>
+                </div>
+                
+                <div class="charge-card">
+                    <div class="charge-header">
+                        <span class="charge-name">Lab Processing</span>
+                        <span class="charge-amount">$395</span>
+                    </div>
+                    <p>Often duplicated or bundled incorrectly. Easy wins for reduction.</p>
+                </div>
+                
+                <div class="charge-card">
+                    <div class="charge-header">
+                        <span class="charge-name">Emergency Room Level 5</span>
+                        <span class="charge-amount">$3,200</span>
+                    </div>
+                    <p>Frequently miscoded. Level 3 ($800) is often the accurate charge.</p>
+                </div>
+                
+                <div class="charge-card">
+                    <div class="charge-header">
+                        <span class="charge-name">Anesthesia Time</span>
+                        <span class="charge-amount">$2,100</span>
+                    </div>
+                    <p>Rounded up in 15-minute blocks. We verify actual procedure time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section (Hidden by default) -->
+    <section id="results" class="results-section" style="display: none;">
+        <div class="container">
+            <div class="results-container">
+                <h2 class="results-title">Bill Analysis Complete</h2>
+                
+                <div class="bill-summary">
+                    <div class="summary-row">
+                        <span>Original Bill</span>
+                        <span class="amount" id="originalAmount">$0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Negotiable Charges</span>
+                        <span class="amount negotiable" id="negotiableAmount">$0</span>
+                    </div>
+                    <div class="summary-row estimated">
+                        <span>Estimated Savings</span>
+                        <span class="amount savings" id="estimatedSavings">$0</span>
+                    </div>
+                </div>
+                
+                <div class="flagged-charges" id="flaggedCharges">
+                    <h3>Flagged Overcharges</h3>
+                    <div id="chargesList"></div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>Ready to Fight Back?</h3>
+                    <p>Our experts will negotiate these charges down. You pay nothing unless we save you money.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" name="name" placeholder="Your name" required>
+                        <input type="email" name="email" placeholder="Email address" required>
+                        <input type="tel" name="phone" placeholder="Phone number" required>
+                        <button type="submit" class="submit-button">Start My Negotiation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Bill Bot. Fighting for patients, one bill at a time.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">HIPAA Compliance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
