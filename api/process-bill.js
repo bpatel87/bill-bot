@@ -1,6 +1,4 @@
 // Vercel Serverless Function for processing bills
-const LetterGenerator = require('./letter-generator');
-
 module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -23,17 +21,8 @@ module.exports = async (req, res) => {
         // Generate demo bill data
         const billData = generateDemoBillData();
         
-        // Generate negotiation letter
-        const letterGenerator = new LetterGenerator();
-        const patientInfo = {
-            name: 'John Doe',
-            email: 'patient@example.com'
-        };
-        
-        const letter = letterGenerator.generateLetter(billData, patientInfo, {
-            strategy: 'fair_pricing',
-            paymentType: 'payment_ready'
-        });
+        // Generate letter inline (simplified)
+        const letter = generateLetter(billData);
         
         // Return results
         res.status(200).json({
@@ -107,5 +96,55 @@ function generateDemoBillData() {
         totalAmount: Math.round(totalAmount),
         charges: billCharges,
         flaggedCharges: flaggedCharges
+    };
+}
+
+function generateLetter(billData) {
+    const patientInfo = { name: 'John Doe', email: 'patient@example.com' };
+    const offerAmount = Math.round(billData.totalAmount * 0.28);
+    const savings = billData.totalAmount - offerAmount;
+    const savingsPercent = Math.round((savings / billData.totalAmount) * 100);
+    
+    const letterText = `${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+
+${patientInfo.name}
+[Your Address]
+
+${billData.provider.name}
+Billing Department
+
+Re: Medical Bill - Account #${billData.accountNumber}
+    Original Amount: $${billData.totalAmount.toLocaleString()}
+    Proposed Settlement: $${offerAmount.toLocaleString()}
+
+Dear Billing Department,
+
+I am writing to request a review and adjustment of my medical bill due to charges that appear to be significantly above standard rates.
+
+After careful review of the itemized charges, I have identified several items that are priced well above Medicare reimbursement rates:
+
+${billData.flaggedCharges.map(charge => 
+`• ${charge.description}: Charged $${charge.amount}, Fair price ~$${charge.fairPrice} (${Math.round((1 - charge.fairPrice/charge.amount) * 100)}% markup)`
+).join('\n')}
+
+Based on my research, I am proposing a settlement amount of $${offerAmount.toLocaleString()}, which represents a ${savingsPercent}% reduction from the original bill.
+
+I am prepared to pay this amount immediately upon acceptance.
+
+Please respond within 15 business days.
+
+Sincerely,
+
+${patientInfo.name}`;
+    
+    const letterHTML = `<div style="white-space: pre-line; font-family: Arial, sans-serif; line-height: 1.6;">${letterText}</div>`;
+    
+    return {
+        text: letterText,
+        html: letterHTML,
+        metadata: {
+            savings: savings,
+            savingsPercent: savingsPercent
+        }
     };
 }
