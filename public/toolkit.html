@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Negotiation Toolkit - Bill Bot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="toolkit-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit;">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="#007AFF" stroke-width="2"/>
+                        <path d="M12 16L15 19L20 14" stroke="#007AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Bill Bot</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="toolkit.html" class="active">DIY Toolkit</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="toolkit-hero">
+        <div class="container">
+            <h1>DIY Negotiation Toolkit</h1>
+            <p class="hero-subtitle">Proven scripts, guides, and confidence builders to negotiate your medical bills like a pro</p>
+        </div>
+    </header>
+
+    <!-- Toolkit Overview -->
+    <section class="toolkit-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="12" width="32" height="24" rx="4" stroke="#007AFF" stroke-width="2"/>
+                            <path d="M16 20H32M16 24H32M16 28H24" stroke="#007AFF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Phone Scripts</h3>
+                    <p>Word-for-word scripts that get results</p>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M12 16L24 8L36 16V32L24 40L12 32V16Z" stroke="#007AFF" stroke-width="2"/>
+                            <path d="M24 8V24M24 24L36 16M24 24L12 16" stroke="#007AFF" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Negotiation Tactics</h3>
+                    <p>Psychology tricks hospitals don't want you to know</p>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="16" stroke="#007AFF" stroke-width="2"/>
+                            <path d="M24 16V24L28 28" stroke="#007AFF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Response Timer</h3>
+                    <p>Know when to pause, push, or accept</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phone Scripts Section -->
+    <section class="phone-scripts" id="phone-scripts">
+        <div class="container">
+            <h2>🎯 Phone Call Scripts</h2>
+            <p class="section-subtitle">Tested scripts that have saved patients thousands</p>
+            
+            <div class="script-tabs">
+                <button class="tab-button active" onclick="showScript('opening')">Opening Call</button>
+                <button class="tab-button" onclick="showScript('pushback')">Handling Pushback</button>
+                <button class="tab-button" onclick="showScript('manager')">Manager Escalation</button>
+                <button class="tab-button" onclick="showScript('closing')">Closing the Deal</button>
+            </div>
+            
+            <div class="script-content" id="script-opening">
+                <div class="script-box">
+                    <h3>Opening Script - Setting the Right Tone</h3>
+                    
+                    <div class="speaker you">You:</div>
+                    <p class="dialogue">
+                        "Hi, my name is [Your Name] and I'm calling about my bill, account number [Number]. 
+                        I received a bill for $[Amount] which seems significantly higher than standard rates. 
+                        I'd like to discuss a fair resolution."
+                    </p>
+                    
+                    <div class="tip">
+                        <strong>Tip:</strong> Stay calm and professional. You're not asking for charity - you're negotiating inflated charges.
+                    </div>
+                    
+                    <div class="speaker them">Them:</div>
+                    <p class="dialogue">"I can look that up for you. What seems to be the issue?"</p>
+                    
+                    <div class="speaker you">You:</div>
+                    <p class="dialogue">
+                        "I've researched standard pricing for these services. For example, you've charged $847 for a facility fee, 
+                        but Medicare pays around $200 for the same service. I have several similar overcharges I'd like to review."
+                    </p>
+                    
+                    <div class="power-phrase">
+                        <strong>Power Phrase:</strong> "I'm prepared to pay a fair amount today if we can reach an agreement."
+                    </div>
+                </div>
+            </div>
+            
+            <div class="script-content" id="script-pushback" style="display: none;">
+                <div class="script-box">
+                    <h3>Handling Common Pushback</h3>
+                    
+                    <div class="objection">Objection: "These are our standard rates."</div>
+                    <div class="speaker you">Your Response:</div>
+                    <p class="dialogue">
+                        "I understand these are your listed rates, but they're 400% higher than what insurance companies pay. 
+                        I'm asking for the same fair pricing that Blue Cross would receive. 
+                        Surely we can find a middle ground that works for both of us."
+                    </p>
+                    
+                    <div class="objection">Objection: "We can't negotiate prices."</div>
+                    <div class="speaker you">Your Response:</div>
+                    <p class="dialogue">
+                        "I appreciate your position, but I know hospitals routinely adjust bills. 
+                        Could you please connect me with someone in financial counseling or a supervisor who has the authority to discuss this? 
+                        I'm trying to avoid filing complaints with the state insurance commissioner."
+                    </p>
+                    
+                    <div class="objection">Objection: "You'll need to apply for financial aid."</div>
+                    <div class="speaker you">Your Response:</div>
+                    <p class="dialogue">
+                        "I'm not seeking charity care. I'm disputing the accuracy of these charges. 
+                        A $43 charge for one ibuprofen is not accurate pricing - it's an error that needs correction. 
+                        Can we please focus on adjusting these specific overcharges?"
+                    </p>
+                </div>
+            </div>
+            
+            <div class="script-content" id="script-manager" style="display: none;">
+                <div class="script-box">
+                    <h3>Manager Escalation Script</h3>
+                    
+                    <div class="speaker you">You:</div>
+                    <p class="dialogue">
+                        "Thank you for taking my call. I've been trying to resolve billing errors on account [Number]. 
+                        Your team member was helpful but indicated they don't have authority to make adjustments. 
+                        As a supervisor, I hope you can help me resolve this today."
+                    </p>
+                    
+                    <div class="tip">
+                        <strong>Tip:</strong> Managers can do more than they initially admit. Be persistent but respectful.
+                    </div>
+                    
+                    <div class="speaker you">Continue:</div>
+                    <p class="dialogue">
+                        "Here's my situation: The total bill is $[Amount]. Based on Medicare rates and fair market pricing, 
+                        a reasonable charge would be around $[Fair Amount]. I'm prepared to pay $[Offer] today 
+                        to settle this account in full. This saves us both time and your hospital avoids collection costs."
+                    </p>
+                    
+                    <div class="power-phrase">
+                        <strong>Power Phrase:</strong> "What do I need to do to pay $[Offer] today and close this account?"
+                    </div>
+                    
+                    <div class="leverage">
+                        <strong>If needed, add leverage:</strong>
+                        "I've documented all overcharges and I'm prepared to file complaints with the state attorney general, 
+                        the insurance commissioner, and post detailed reviews online. I'd prefer we settle this between us."
+                    </div>
+                </div>
+            </div>
+            
+            <div class="script-content" id="script-closing" style="display: none;">
+                <div class="script-box">
+                    <h3>Closing the Deal</h3>
+                    
+                    <div class="speaker you">When they make an offer:</div>
+                    <p class="dialogue">
+                        "I appreciate you working with me on this. So you're offering to settle the full balance for $[Their Offer]. 
+                        Can you confirm this will close the account completely with no additional bills?"
+                    </p>
+                    
+                    <div class="checklist">
+                        <h4>Before accepting, confirm:</h4>
+                        <ul>
+                            <li>✓ This settles the ENTIRE account</li>
+                            <li>✓ No additional bills will follow</li>
+                            <li>✓ Get the agreement in writing</li>
+                            <li>✓ Get a reference number</li>
+                            <li>✓ Get the rep's name and direct line</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="speaker you">Finalizing:</div>
+                    <p class="dialogue">
+                        "Perfect. I'll make the payment of $[Amount] today. Please email me confirmation to [Email] 
+                        showing this payment settles the account in full. Can you provide that reference number 
+                        and your direct line in case I need to follow up?"
+                    </p>
+                    
+                    <div class="warning">
+                        <strong>Important:</strong> Record the call if legal in your state. Always get agreements in writing before paying.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Templates Section -->
+    <section class="email-templates">
+        <div class="container">
+            <h2>📧 Email & Letter Templates</h2>
+            <p class="section-subtitle">Professional templates you can customize</p>
+            
+            <div class="template-grid">
+                <div class="template-card">
+                    <h3>Initial Inquiry</h3>
+                    <p>Professional first contact establishing your position</p>
+                    <button class="template-button" onclick="showTemplate('initial')">Use Template</button>
+                </div>
+                
+                <div class="template-card">
+                    <h3>Formal Dispute</h3>
+                    <p>Detailed letter with evidence and Medicare comparisons</p>
+                    <button class="template-button" onclick="showTemplate('dispute')">Use Template</button>
+                </div>
+                
+                <div class="template-card">
+                    <h3>Settlement Offer</h3>
+                    <p>Making a specific offer with payment terms</p>
+                    <button class="template-button" onclick="showTemplate('settlement')">Use Template</button>
+                </div>
+                
+                <div class="template-card">
+                    <h3>Escalation Letter</h3>
+                    <p>When you need to involve regulatory agencies</p>
+                    <button class="template-button" onclick="showTemplate('escalation')">Use Template</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confidence Builder Section -->
+    <section class="confidence-builder">
+        <div class="container">
+            <h2>💪 Build Your Negotiation Confidence</h2>
+            
+            <div class="confidence-grid">
+                <div class="confidence-card">
+                    <h3>Know Your Rights</h3>
+                    <ul>
+                        <li>You have the right to an itemized bill</li>
+                        <li>You can request pricing transparency</li>
+                        <li>You can negotiate any bill</li>
+                        <li>You can request payment plans</li>
+                        <li>You can dispute coding errors</li>
+                    </ul>
+                </div>
+                
+                <div class="confidence-card">
+                    <h3>Your Leverage Points</h3>
+                    <ul>
+                        <li>Hospitals want to avoid collections (expensive)</li>
+                        <li>Cash payment is valuable to them</li>
+                        <li>Bad reviews hurt their business</li>
+                        <li>Regulatory complaints are serious</li>
+                        <li>They expect to negotiate</li>
+                    </ul>
+                </div>
+                
+                <div class="confidence-card">
+                    <h3>Mindset Shifts</h3>
+                    <ul>
+                        <li>You're not begging - you're correcting errors</li>
+                        <li>The first bill is just an opening offer</li>
+                        <li>Insurance pays 22¢ per dollar - why shouldn't you?</li>
+                        <li>Silence is powerful - use it</li>
+                        <li>They need you more than you need them</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section class="interactive-tools">
+        <div class="container">
+            <h2>🛠️ Interactive Negotiation Tools</h2>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Fair Price Calculator</h3>
+                    <p>Input charges to see Medicare rates and fair prices</p>
+                    <div class="tool-demo">
+                        <input type="text" placeholder="Charge description" id="charge-desc">
+                        <input type="number" placeholder="Amount charged" id="charge-amount">
+                        <button onclick="calculateFairPrice()">Calculate Fair Price</button>
+                        <div id="fair-price-result"></div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Settlement Calculator</h3>
+                    <p>Find your negotiation sweet spot</p>
+                    <div class="tool-demo">
+                        <input type="number" placeholder="Total bill amount" id="total-bill">
+                        <button onclick="calculateSettlement()">Calculate Options</button>
+                        <div id="settlement-result"></div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h3>Response Timer</h3>
+                    <p>Know when to pause during calls</p>
+                    <div class="timer-tool">
+                        <button onclick="startSilenceTimer()" class="timer-button">Start Power Pause</button>
+                        <div id="timer-display">Use strategic silence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2>🎉 DIY Success Stories</h2>
+            <p class="section-subtitle">Real people who negotiated their own bills</p>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="quote">"Used the manager escalation script and got my $8,400 ER bill down to $2,100. The scripts gave me confidence!"</div>
+                    <div class="attribution">- Sarah M., Texas</div>
+                    <div class="savings">Saved $6,300 (75%)</div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="quote">"The facility fee script worked perfectly. They removed the entire $847 charge after I quoted Medicare rates."</div>
+                    <div class="attribution">- Michael D., Ohio</div>
+                    <div class="savings">Saved $847 (100%)</div>
+                </div>
+                
+                <div class="story-card">
+                    <div class="quote">"Power pause technique is real! When I stayed silent after their first offer, they immediately dropped another $1,200."</div>
+                    <div class="attribution">- Jennifer L., Florida</div>
+                    <div class="savings">Saved $3,500 (68%)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="toolkit-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need More Help?</h2>
+                <p>If DIY isn't working or you're too exhausted to fight, we're here for you.</p>
+                <p>Let our experts handle everything for just 20% of what we save you.</p>
+                <a href="index.html" class="cta-button">
+                    Get Professional Help
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Bill Bot. Empowering patients to fight back.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Success Stories</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="toolkit.js"></script>
+</body>
+</html>
