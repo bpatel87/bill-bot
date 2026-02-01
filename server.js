@@ -32,7 +32,7 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // API routes
-const processBillRoute = require('./routes/process-bill');
+const processBillRoute = require('./routes/process-bill-v2');
 app.use('/api', processBillRoute);
 
 // Health check endpoint
