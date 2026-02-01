@@ -1,8 +1,8 @@
-// Health check endpoint
+// Simple test endpoint
 export default function handler(req, res) {
     res.status(200).json({ 
-        status: 'ok', 
+        message: 'API is working!',
         timestamp: new Date().toISOString(),
-        message: 'Bill Bot API is running'
+        method: req.method
     });
 }
